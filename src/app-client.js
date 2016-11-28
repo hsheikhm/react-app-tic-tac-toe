@@ -3,11 +3,11 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Game from './components/Game';
+import AppRoutes from './components/AppRoutes';
 
 window.onload = () => {
   ReactDOM.render(
-    <Game />,
+    <AppRoutes />,
     document.getElementById('container')
   );
 };
