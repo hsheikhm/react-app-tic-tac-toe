@@ -1,0 +1,44 @@
+{
+  "name": "react-app-tic-tac-toe",
+  "version": "1.0.0",
+  "description": "React App - Tic Tac Toe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production node_modules/.bin/babel-node --presets 'react,es2015' src/server.js",
+    "start-dev": "npm run start-dev-hmr",
+    "start-dev-single-page": "node_modules/.bin/http-server src/static",
+    "start-dev-hmr": "node_modules/.bin/webpack-dev-server --progress --inline --hot",
+    "build": "NODE_ENV=production node_modules/.bin/webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsheikhm/react-app-tic-tac-toe.git"
+  },
+  "author": "Hamza Sheikh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hsheikhm/react-app-tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/hsheikhm/react-app-tic-tac-toe#readme",
+  "dependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-plugin-react-html-attrs": "^2.0.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-react-hmre": "^1.1.1",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^3.0.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
