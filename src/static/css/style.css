@@ -32,6 +32,14 @@ ol, ul {
   width: 34px;
 }
 
+.square.cross {
+ color: red
+}
+
+.square.circle {
+  color: blue
+}
+
 .square:focus {
   outline: none;
 }
@@ -47,6 +55,22 @@ ol, ul {
 
 .game-info {
   margin-left: 20px;
+}
+
+.player-cross {
+  color: red;
+}
+
+.player-circle {
+  color: blue;
+}
+
+.move {
+  font-weight: normal;
+}
+
+.move-active {
+  font-weight: bold;
 }
 
 #errors {
