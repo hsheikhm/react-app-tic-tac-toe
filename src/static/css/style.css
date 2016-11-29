@@ -32,6 +32,14 @@ ol, ul {
   width: 34px;
 }
 
+.green-square {
+  background-color: green;
+}
+
+.normal-square {
+  background-color: white;
+}
+
 .square.cross {
  color: red
 }

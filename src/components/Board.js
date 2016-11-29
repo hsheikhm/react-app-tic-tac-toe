@@ -6,7 +6,7 @@ import Square from './Square';
 
 class Board extends React.Component {
   renderSquare(i) {
-    return <Square value={this.props.squares[i]} onClick={() => this.props.onClick(i)} />;
+    return <Square winningSquare={this.props.winningSquares.indexOf(i) > -1} value={this.props.squares[i]} onClick={() => this.props.onClick(i)} />
   }
 
   render() {

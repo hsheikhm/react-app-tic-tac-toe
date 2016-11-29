@@ -12,7 +12,8 @@ class Game extends React.Component {
         squares: Array(9).fill(null)
       }],
       stepNumber: 0,
-      xIsNext: true
+      xIsNext: true,
+      winningLine: []
     };
   }
 
@@ -21,12 +22,16 @@ class Game extends React.Component {
     const current = history[this.state.stepNumber];
     const squares = current.squares.slice();
     if (this.calculateWinner(squares) || squares[i]) {
+      this.setState({
+        winningLine: []
+      });
       return;
     }
     if (this.state.stepNumber < history.length - 1) {
       history = history.slice(0, this.state.stepNumber + 1);
       this.setState({
-        history: history
+        history: history,
+        winningLine: []
       });
     }
     squares[i] = this.state.xIsNext ? 'X' : 'O';
@@ -49,14 +54,16 @@ class Game extends React.Component {
           squares: Array(9).fill(null)
         }],
         stepNumber: 0,
-        xIsNext: true
+        xIsNext: true,
+        winningLine: []
       });
       return;
     }
 
     this.setState({
       stepNumber: step,
-      xIsNext: (step % 2) ? false : true
+      xIsNext: (step % 2) ? false : true,
+      winningLine: []
     });
   }
 
@@ -74,6 +81,9 @@ class Game extends React.Component {
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+        this.setState({
+          winningLine: lines[i]
+        });
         return squares[a];
       }
     }
@@ -85,6 +95,7 @@ class Game extends React.Component {
     const current = history[this.state.stepNumber];
     const winner = this.calculateWinner(current.squares);
     const player = this.state.xIsNext ? 'X' : 'O';
+    const winningLine = this.state.winningLine;
     let status;
     if (winner) {
       status = (
@@ -114,6 +125,7 @@ class Game extends React.Component {
           <Board
             squares={current.squares}
             onClick={(i) => this.handleClick(i)}
+            winningSquares={winningLine}
           />
         </div>
         <div className="game-info">
