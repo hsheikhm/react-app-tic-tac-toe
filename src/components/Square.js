@@ -6,7 +6,7 @@ import React from 'react';
 class Square extends React.Component {
   squareColor() {
     let color;
-    color = this.props.value === 'X' ? "square cross" : "square circle";
+    color = (this.props.value === 'X') ? "square cross" : "square circle";
     color += this.props.winningSquare ? " green-square" : " normal-square";
     return color;
   }
