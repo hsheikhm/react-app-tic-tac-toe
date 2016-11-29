@@ -17,11 +17,17 @@ class Game extends React.Component {
   }
 
   handleClick(i) {
-    const history = this.state.history;
+    let history = this.state.history;
     const current = history[this.state.stepNumber];
     const squares = current.squares.slice();
     if (this.calculateWinner(squares) || squares[i]) {
       return;
+    }
+    if (this.state.stepNumber < history.length - 1) {
+      history = history.slice(0, this.state.stepNumber + 1);
+      this.setState({
+        history: history
+      });
     }
     squares[i] = this.state.xIsNext ? 'X' : 'O';
     this.setState({
