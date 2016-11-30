@@ -13,7 +13,7 @@ class Layout extends React.Component {
         </header>
         <div>{this.props.children}</div>
         <footer>
-          <p>Created by Hamza Sheikh</p>
+          <p>Created by Hamza Sheikh using: ReactJS | NodeJS | ExpressJS | Sass | Webpack | Grunt</p>
         </footer>
       </div>
     );
