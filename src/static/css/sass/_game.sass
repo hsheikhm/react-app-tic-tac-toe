@@ -1,0 +1,55 @@
+.game
+  display: flex
+  flex-direction: row
+
+.square
+  background: #fff
+  border: 1px solid #999
+  float: left
+  font-size: 24px
+  font-weight: bold
+  height: 34px
+  line-height: 34px
+  margin-right: -1px
+  margin-top: -1px
+  padding: 0
+  text-align: center
+  width: 34px
+
+  &.cross
+    color: red
+
+  &.circle
+    color: blue
+
+  &:focus
+    outline: none
+
+.green-square
+  background-color: green
+
+.normal-square
+  background-color: white
+
+.player-cross
+  color: red
+
+.player-circle
+  color: blue
+
+.game-info
+  margin-left: 20px
+
+.move
+  font-weight: normal
+
+.move-active
+  font-weight: bold
+
+#errors
+  background: #c00
+  color: #fff
+  display: none
+  margin: -20px -20px 20px
+  padding: 20px
+  white-space: pre-wrap
