@@ -11,14 +11,16 @@
      filename: 'bundle.js'
    },
    module: {
-     loaders: [{
-       test: path.join(__dirname, 'src'),
-       loader: ['babel-loader'],
-       query: {
-         cacheDirectory: 'babel-cache',
-         presets: ['react', 'es2015']
-       }
-     }]
+     loaders: [
+       {
+         test: path.join(__dirname, 'src'),
+         loader: ['babel-loader'],
+          query: {
+            cacheDirectory: 'babel-cache',
+            presets: ['react', 'es2015']
+          }
+        }
+      ]
    },
    plugins: [
      new webpack.DefinePlugin({

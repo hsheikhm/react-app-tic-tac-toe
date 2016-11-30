@@ -38,3 +38,7 @@ jspm_packages
 
 # Babel cache directory
 babel-cache
+
+# Sass cache
+/.sass-cache
+/src/static/css/bundle.css.map
